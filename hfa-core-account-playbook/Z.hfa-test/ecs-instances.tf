@@ -42,35 +42,35 @@ resource "huaweicloud_compute_instance" "prod_ecs" {
   }
 }
 
-resource "huaweicloud_compute_instance" "transit_ingress_ecs" {
-  provider = huaweicloud.general_service
-  name              = "ecs-transit-ingress"
-  image_id          = data.huaweicloud_images_image.compute_image.id
-  flavor_id         = data.huaweicloud_compute_flavors.compute_flavor.ids[0]
-  security_group_ids   = [ huaweicloud_networking_secgroup.sg_default.id ]
-  availability_zone = data.huaweicloud_availability_zones.availability_zone.names[0]
-  user_data =         base64encode(file("user_data.sh"))
+# resource "huaweicloud_compute_instance" "transit_ingress_ecs" {
+#   provider = huaweicloud.general_service
+#   name              = "ecs-transit-ingress"
+#   image_id          = data.huaweicloud_images_image.compute_image.id
+#   flavor_id         = data.huaweicloud_compute_flavors.compute_flavor.ids[0]
+#   security_group_ids   = [ huaweicloud_networking_secgroup.sg_default.id ]
+#   availability_zone = data.huaweicloud_availability_zones.availability_zone.names[0]
+#   user_data =         base64encode(file("user_data.sh"))
 
-  network {
-    uuid = data.terraform_remote_state.network.outputs.transit_ingress_subnet_id
-    fixed_ip_v4  = "10.19.0.100"
-  }
-}
+#   network {
+#     uuid = data.terraform_remote_state.network.outputs.transit_ingress_subnet_id
+#     fixed_ip_v4  = "10.19.0.100"
+#   }
+# }
 
-resource "huaweicloud_compute_instance" "transit_egress_ecs" {
-  provider = huaweicloud.general_service
-  name              = "ecs-transit-egress"
-  image_id          = data.huaweicloud_images_image.compute_image.id
-  flavor_id         = data.huaweicloud_compute_flavors.compute_flavor.ids[0]
-  security_group_ids   = [ huaweicloud_networking_secgroup.sg_default.id ]
-  availability_zone = data.huaweicloud_availability_zones.availability_zone.names[0]
-  user_data =         base64encode(file("user_data.sh"))
+# resource "huaweicloud_compute_instance" "transit_egress_ecs" {
+#   provider = huaweicloud.general_service
+#   name              = "ecs-transit-egress"
+#   image_id          = data.huaweicloud_images_image.compute_image.id
+#   flavor_id         = data.huaweicloud_compute_flavors.compute_flavor.ids[0]
+#   security_group_ids   = [ huaweicloud_networking_secgroup.sg_default.id ]
+#   availability_zone = data.huaweicloud_availability_zones.availability_zone.names[0]
+#   user_data =         base64encode(file("user_data.sh"))
 
-  network {
-    uuid = data.terraform_remote_state.network.outputs.transit_egress_subnet_id
-    fixed_ip_v4  = "10.18.0.100"
-  }
-}
+#   network {
+#     uuid = data.terraform_remote_state.network.outputs.transit_egress_subnet_id
+#     fixed_ip_v4  = "10.18.0.100"
+#   }
+# }
 
 
 
