@@ -1,0 +1,1 @@
+variable cts_local_rotation_day { default = "30" }
