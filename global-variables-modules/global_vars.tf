@@ -6,6 +6,6 @@ output "default_region" { value = "ap-southeast-2" }
 
 ## AK/SK for general account 
 output "general_service_account_name"   { value = "general_service" }
-output "general_service_root_account_name"   { value = "hwstaff_intl_apac_kar_prod" }
-output "general_service_account_ak"   { value = "ZCMQZ3TDW7THNCEHM0AP" }
-output "general_service_account_sk"   { value = "ao2AbxGvSbR4cwSpJagtXixERaSq8jPjCoOJkyK1" }
+output "general_service_root_account_name"   { value = "" }
+output "general_service_account_ak"   { value = "" }
+output "general_service_account_sk"   { value = "" }
