@@ -45,6 +45,11 @@ output "transit_egress_nat_gw_id" {
 }
 
 output "common_requester_vpc_peering_id" {
-  value = module.common_service_vpc_2_transit_service_egress_vpc.requester_vpc_peering_id
+  value = module.common_service_vpc_2_transit_service_ingress_vpc.requester_vpc_peering_id
+  description = "Common Service Requester VPC Peering id"
+}
+
+output "prod_requester_vpc_peering_id" {
+  value = module.prod_vpc_2_transit_service_ingress_vpc.requester_vpc_peering_id
   description = "Common Service Requester VPC Peering id"
 }
