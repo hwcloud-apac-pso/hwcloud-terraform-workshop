@@ -11,6 +11,6 @@ provider "huaweicloud" {
   # alias not support variable
   alias      = "general_service"
   region     = module.global_variables.default_region
-  access_key = module.global_variables.general_service_account_ak
-  secret_key = module.global_variables.general_service_account_sk
+  access_key = module.global_variables.core_account_ak
+  secret_key = module.global_variables.core_account_sk
 }

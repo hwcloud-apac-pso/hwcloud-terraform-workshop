@@ -106,8 +106,6 @@ resource "huaweicloud_vpc_subnet" "egress_subnet" {
   )
 }
 
-
-
 ######
 
 resource "huaweicloud_nat_gateway" "egress_nat" {
@@ -133,7 +131,6 @@ resource "huaweicloud_vpc_eip" "nat_eip" {
     charge_mode = "traffic"
   }
 }
-
 
 resource "huaweicloud_nat_snat_rule" "egress_snat_rule" {
   count =   length(var.egress_subnet_cidr) > 0 && length(var.egress_nat_gw_name) > 0 ? 1 : 0

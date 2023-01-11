@@ -1,11 +1,8 @@
-output "corp_name" { value = "hwcloud_intl_corp" }
-output "corp-name" { value = "hwcloud-intl-corp" }
+#### for default region singapore
+output "default_region" { value = "ap-southeast-3" }
 
-## for default region bangkok
-output "default_region" { value = "ap-southeast-2" }
-
-## AK/SK for general account 
-output "general_service_account_name"   { value = "general_service" }
-output "general_service_root_account_name"   { value = "hwstaff_intl_apac_kar_commom" }
-output "general_service_account_ak"   { value = "YLMA7Z0JAR6LTAHMM0IH" }
-output "general_service_account_sk"   { value = "tfd9aRffd7yntkHCdETv02MgrLs4wHJMRHyxGGrV" }
+# AK/SK common Services/share Services/ops ,  transit , security/audit account 
+output "core_account_name"   { value = "core_account" }
+output "core_root_account_name"   { value = "hwstaff_intl_apac_kar_commom" }
+output "core_account_ak"   { value = "insert-your-access-key-here" }
+output "core_account_sk"   { value = "insert-your-secret-key-here" }
